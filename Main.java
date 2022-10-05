@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.*;
 public class Main {
-    //Token: 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"
     public static void main(String[] args) {
         Controller control = new Controller();
         cadastraProduto(control);
