@@ -4,49 +4,26 @@ public class Main {
     //Token: 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"
     public static void main(String[] args) {
         Controller control = new Controller();
-        Scanner sc = new Scanner(System.in);
-        String escolha = "";
-        while (true) {
-            escolha = menu(sc);
-            comando(escolha, control, sc);
-        }
-    }
-    private static String menu(Scanner scanner) {
-        System.out.println(
-                "\n---\nMENU\n" +
-                        "(C)adastrar Produto\n" +
-                        "(E)xibir Produto\n"+
-                        "(Q)uit\n"+
-                        "\n" +
-                        "Opção> ");
-        return scanner.next().toUpperCase();
-    }
-    private static void comando(String opcao, Controller controle, Scanner scanner) {
-        switch (opcao) {
-            case "C":
-                cadastraProduto(controle,scanner);
-                break;
-            
-            case "Q":
-                quit();
-                break;
-            default:
-                System.out.println("Opção inválida!");
-        }
+        cadastraProduto(control);
+        cadastraLote(control);
+        listaLotes(control);
+
     }
 
-    private static void quit() {
+    public static void listaLotes(Controller control) {
+        System.out.println(control.listaLotes());
     }
 
-    private static void cadastraProduto(Controller controle, Scanner scanner) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("\nNome: ");
-        String nome = input.nextLine();
-        System.out.print("\nFabricante: ");
-        String fabricante = input.nextLine();
-        System.out.print("\nPreco: ");
-        Double preco = input.nextDouble();
-        controle.novoProduto(nome,fabricante,preco);
+    private static void cadastraProduto(Controller controle) {
+        System.out.println(controle.novoProduto("Paçoca","Bar do Cuscuz",19.90));
+        System.out.println(controle.novoProduto("Beirute","Karintó",15.90));
+        System.out.println(controle.novoProduto("Sapinho","Parque do Povo",55.90));
+
+    }
+    private static void cadastraLote(Controller controle) {
+        System.out.println(controle.novoLote("Paçoca",12,"16/09/2022"));
+        System.out.println(controle.novoLote("Beirute",0,"15/08/1979"));
+        System.out.println(controle.novoLote("Sapinho",983,"11/11/2011"));
     }
 }
 
