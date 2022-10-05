@@ -11,9 +11,15 @@ public class Lotes {
         this.DataValidade = DataValidade;
 
     }
+    public int getQuantidade(){
+        return this.Quantidade;
+    }
+    public String getValidade(){
+        return this.DataValidade;
+    }
     @Override
     public String toString() {
-        String string = "CADASTRADO: " + Produto +" - Quantidade: "+Quantidade+ "- Validade: "+DataValidade;
+        String string = "CADASTRADO: " + Produto +" - Quantidade: "+Quantidade+ " - Validade: "+DataValidade;
         return string;
     }
 }

@@ -1,8 +1,8 @@
 
 
-public class Controller {
+public class Facade {
     Services services;
-    public Controller(){
+    public Facade(){
         Services serv = new Services();
         this.services = serv;
     }
