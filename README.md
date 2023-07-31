@@ -1,1 +1,1 @@
-# PSOFT-1
+# Basic Application Structure
